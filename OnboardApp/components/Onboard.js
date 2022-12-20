@@ -1,5 +1,5 @@
 import React from 'react';
-import colors from './assets/colors';
+import colors from '../assets/colors';
 
 
 import {View, Text, Image, StyleSheet, StatusBar} from 'react-native';
@@ -10,26 +10,26 @@ const data = [
   {
     title: 'Save time by tracking your studies ',
     text: 'Schedule your classes, assignments, quizzes and more',
-    image: require('./assets/images/Onboard_1.png'),
+    image: require('../assets/images/Onboard_1.png'),
     
   },
   {
     title: 'Stay on top of your education',
     text: 'Reduce your stress, increase your productivity',
-    image: require('./assets/images/Onboard_2.png'),
+    image: require('../assets/images/Onboard_2.png'),
     
   },
   {
     title: 'Spend more time doing the things you love',
     text: "Get started within five minutes",
-    image: require('./assets/images/Onboard_3.png'),
+    image: require('../assets/images/Onboard_3.png'),
     
   },
 ];
 
 
 
-export default function OnboardApp() {
+export default function Onboard(props) {
 
   const renderItem=({item})=>{
     return(
@@ -70,6 +70,10 @@ export default function OnboardApp() {
       </View>
       );
   };
+const handleDone=()=>{
+    props.handleDone();    
+};
+
   return (
     <View style={{flex: 1}}>
     <StatusBar translucent backgroundColor="transparent" />
@@ -83,6 +87,7 @@ export default function OnboardApp() {
       dotStyle={styles.dotStyle}
       activeDotStyle={styles.activeDotStyle}
       data={data}
+      onDone={handleDone}
     />
   </View>
   );
