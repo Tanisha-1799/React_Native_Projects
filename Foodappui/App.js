@@ -1,25 +1,45 @@
 import { StatusBar } from 'expo-status-bar';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { useFonts } from 'expo-font';
+//import { useFonts } from 'expo-font';
+import * as Font from "expo-font";
+import Apploading from "expo-app-loading";
 import colors from './assets/colors';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+Icon.loadFont();
 
 export default function App() {
-
-  const [fontsLoaded] = useFonts({
-    'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
-    'Montserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
-    'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
-    'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf')
+  const getFonts = () =>
+  Font.loadAsync({
+    MontserratBold : require('./assets/fonts/Montserrat-Bold.ttf'),
+    MontserratMedium : require('./assets/fonts/Montserrat-Medium.ttf'),
+    MontserratRegular : require('./assets/fonts/Montserrat-Regular.ttf'),
+    MontserratSemiBold : require('./assets/fonts/Montserrat-SemiBold.ttf')
   });
+  const [fontsloaded, setFontsLoaded] = useState(false);
 
-  // ...
-
+  
+  if (fontsloaded) {
   return (
+   
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+     <Icon name="ios-person" size={30} color="#4F8EF7" />
+      <Text style={styles.text}>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
-  );
+  );}else {
+    return (
+      <Apploading
+        startAsync={getFonts}
+        onFinish={() => {
+          setFontsLoaded(true);
+        }}
+        onError={console.warn}
+      />
+    );
+  }
+
 }
 
 const styles = StyleSheet.create({
@@ -28,7 +48,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    fontFamily:'Montserrat-SemiBold',
-    color:'#F26C68',
+    
   },
+  text:{
+    fontFamily:"MontserratBold",
+    color:colors.secondary,
+    
+  }
 });
