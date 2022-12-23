@@ -1,12 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-//import { useFonts } from 'expo-font';
 import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
-import colors from './assets/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from './Home';
+import * as React from 'react';
+import {useState} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 
 Icon.loadFont();
 
@@ -24,11 +22,47 @@ export default function App() {
   if (fontsloaded) {
   return (
    
-    <View style={styles.container}>
-     
+    <NavigationContainer>
       <Home />
-    </View>
-  );}else {
+    
+    </NavigationContainer>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+else {
     return (
       <Apploading
         startAsync={getFonts}
@@ -42,17 +76,3 @@ export default function App() {
 
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
-  },
-  text:{
-    fontFamily:"MontserratBold",
-    color:colors.secondary,
-    
-  }
-});
