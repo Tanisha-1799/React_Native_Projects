@@ -6,6 +6,7 @@ import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 import colors from './assets/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Home from './Home';
 
 Icon.loadFont();
 
@@ -24,9 +25,8 @@ export default function App() {
   return (
    
     <View style={styles.container}>
-     <Icon name="ios-person" size={30} color="#4F8EF7" />
-      <Text style={styles.text}>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+     
+      <Home />
     </View>
   );}else {
     return (
