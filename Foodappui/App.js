@@ -1,14 +1,18 @@
 import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 import Icon from 'react-native-vector-icons/Ionicons';
-import Home from './Home';
+import Home from './components/Home';
 import * as React from 'react';
 import {useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 Icon.loadFont();
 
+
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
   const getFonts = () =>
   Font.loadAsync({
     MontserratBold : require('./assets/fonts/Montserrat-Bold.ttf'),
@@ -23,8 +27,16 @@ export default function App() {
   return (
    
     <NavigationContainer>
-      <Home />
-    
+      <Stack.Navigator>
+        <Stack.Screen 
+        name="Home" 
+        component={Home}
+        options={{
+          headerShown : false,
+          
+
+        }} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
