@@ -98,7 +98,7 @@ const styles=StyleSheet.create({
     },
     categoriesTitle:{
         fontFamily:'MontserratBold',
-        fontSize:16,
+        fontSize:14,
         color:colors.textDark,
         
     },
