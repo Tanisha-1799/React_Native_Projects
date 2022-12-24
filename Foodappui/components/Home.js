@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import categoriesData from '../assets/data/categoriesData';
@@ -35,6 +35,8 @@ const Home =()=>{
     
     return (
         <View style={styles.container}>
+
+        <ScrollView contentInsetAdjustmentBehavior='automatic'>
             <SafeAreaView>
                 <View style={styles.headerWrapper}>
                     <Image source={require('../assets/images/prr2.jpg')} 
@@ -76,6 +78,12 @@ const Home =()=>{
                 {popularData.map((item)=>(
                     <View style={[styles.popularCardWrapper],{
                         marginTop:item.id==1?10:20,
+                        backgroundColor:colors.white,
+                        borderRadius:20,
+                        paddingTop:20,
+                        overflow:'hidden',
+                        paddingLeft:20,
+                        flexDirection:'row',
                     }}>
                         <View>
                             <View>
@@ -113,9 +121,13 @@ const Home =()=>{
 
                             </View>
                         </View>
+                        <View style={styles.popularCardRight}>
+                            <Image source={item.image} style={styles.popularCardImage}/>
+                        </View>
                     </View>
                 ))}
             </View>
+            </ScrollView>
             
         </View>
     );
@@ -189,6 +201,14 @@ const styles=StyleSheet.create({
         backgroundColor:colors.primary,
         marginRight:20,
         borderRadius:20,
+        shadowColor:colors.black,
+        shadowOffset:{
+            width:0,
+            height:2,
+        },
+        shadowOpacity:0.05,
+        shadowRadius:10,
+        elevation:2,
     },
     categoryItemImage:{
         width:60,
@@ -230,6 +250,7 @@ const styles=StyleSheet.create({
         backgroundColor:colors.white,
         borderRadius:20,
         paddingTop:20,
+        
         paddingLeft:20,
         flexDirection:'row',
     
@@ -237,6 +258,7 @@ const styles=StyleSheet.create({
     },
     popularTopWrapper:{
         flexDirection:'row',
+        
         alignItems:'center',
     },
     popularTopText:{
@@ -263,8 +285,7 @@ const styles=StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         marginTop:10,
-        marginLeft:-20,
-
+        
     },
     addPizzaButton:{
         backgroundColor:colors.primary,
@@ -272,8 +293,27 @@ const styles=StyleSheet.create({
         paddingVertical:20,
         borderTopRightRadius:25,
         borderBottomLeftRadius:25,
+        marginLeft:-20,
 
     },
-    ratingWrapper:{},
-    rating:{},
+    ratingWrapper:{
+        flexDirection:'row',
+        alignItems:'center',
+        marginLeft:20,
+    },
+    rating:{
+        fontFamily:'MontserratSemiBold',
+        fontSize:12,
+        color:colors.textDark,
+        marginLeft:5,
+    },
+    popularCardRight:{
+       marginLeft:10,
+    },
+    popularCardImage:{
+        width:210,
+        height:125,
+        resizeMode:'contain',
+
+    },
 });
