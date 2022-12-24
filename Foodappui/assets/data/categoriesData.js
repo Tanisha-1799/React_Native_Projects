@@ -9,13 +9,13 @@ const categoriesData=[
     id:2,
     image: require('../images/shrimp-icon.png'),
     title:'Sea Food',
-    selected:true,
+    selected:false,
 },
 {
     id:3,
     image: require('../images/soda-icon.png'),
     title:'Soft Drinks',
-    selected:true,
+    selected:false,
 },
 
 ];
