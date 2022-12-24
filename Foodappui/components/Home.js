@@ -228,7 +228,7 @@ const styles=StyleSheet.create({
     },
     popularCardWrapper:{
         backgroundColor:colors.white,
-        borderRadius:25,
+        borderRadius:20,
         paddingTop:20,
         paddingLeft:20,
         flexDirection:'row',
@@ -259,8 +259,21 @@ const styles=StyleSheet.create({
         marginTop:5,
 
     },
-    popularCardBottom:{},
-    addPizzaButton:{},
+    popularCardBottom:{
+        flexDirection:'row',
+        alignItems:'center',
+        marginTop:10,
+        marginLeft:-20,
+
+    },
+    addPizzaButton:{
+        backgroundColor:colors.primary,
+        paddingHorizontal:40,
+        paddingVertical:20,
+        borderTopRightRadius:25,
+        borderBottomLeftRadius:25,
+
+    },
     ratingWrapper:{},
     rating:{},
 });
