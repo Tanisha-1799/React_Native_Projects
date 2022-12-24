@@ -8,6 +8,22 @@ import colors from '../assets/colors';
 
 Feather.loadFont
 const Home =()=>{
+    const renderCategoryItem=({item})=>{
+        return(
+            <View style={styles.categoryItemWrapper}>
+                <Image source={item.image} style={styles.categoryItemImage}/>
+                <Text style={styles.categoryItemTitle}>{item.title}</Text>
+                <View style={styles.categorySelectWrapper}>
+                    <Feather 
+                        name='chevron-right'
+                        size={8}
+                        style={styles.categorySelectIcon}
+                    />
+                </View>
+            </View>
+        );
+    };
+    
     return (
         <View style={styles.container}>
             <SafeAreaView>
@@ -29,12 +45,19 @@ const Home =()=>{
                     <Text style={styles.searchText}>Search</Text>
                 </View>
             </View>
+            
 
             {/* Categories */}
             <View style={styles.categoriesWrapper}>
                 <Text style={styles.categoriesTitle}>Categories</Text>
                 <View style={styles.categoriesListWrapper}>
-                    <FlatList />
+                    <FlatList
+                    data={categoriesData}
+                    renderItem={renderCategoryItem}
+                    keyExtractor={item => item.id}
+                    horizontal={true}
+         />
+
                 </View>
             </View>
             
@@ -99,8 +122,43 @@ const styles=StyleSheet.create({
     categoriesTitle:{
         fontFamily:'MontserratBold',
         fontSize:14,
-        color:colors.textDark,
+        paddingHorizontal:20,
         
     },
-    categoriesListWrapper:{},
+    categoriesListWrapper:{
+       paddingTop:15,
+       paddingBottom:20,
+    },
+    categoryItemWrapper:{
+        backgroundColor:colors.primary,
+        marginRight:20,
+        borderRadius:20,
+    },
+    categoryItemImage:{
+        width:60,
+        height:60,
+        marginTop:25,
+        alignSelf:'center',
+        marginHorizontal:20,
+
+    },
+    categoryItemTitle:{
+        textAlign:'center',
+        fontFamily:'MontserratMedium',
+        fontSize:14,
+        marginTop:10,
+    },
+    categorySelectWrapper:{
+        alignSelf:'center',
+        justifyContent:'center',
+        marginTop:20,
+        width:26,
+        height:26,
+        borderRadius:26,
+        marginBottom:20,
+    },
+    categorySelectIcon:{
+        alignSelf:'center',
+        
+    },
 });
