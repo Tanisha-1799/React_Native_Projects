@@ -16,6 +16,20 @@ const Detail=({route, navigation})=>{
         return(
             <View style={[styles.ingredientItemWrapper],{
                 marginLeft : item.id== '1' ? 20 : 0,
+                backgroundColor:colors.white,
+      justifyContent:'center',
+      alignItems:'center',
+      paddingHorizontal:10,
+      marginRight:15,
+      borderRadius:15, 
+      shadowColor:colors.black,
+        shadowOffset:{
+            width:0,
+            height:2,
+        },
+        shadowOpacity:0.05,
+        shadowRadius:10,
+        elevation:2, 
             }}>
                <Image source={item.image} style={styles.ingredientImage}/>
             </View>
@@ -97,9 +111,13 @@ const Detail=({route, navigation})=>{
             </View>
         </View>
         {/*Place Order Button*/}
-        <View></View>
-
+        <TouchableOpacity onPress={() => alert('Your order has been placed!')}>
+        <View style={styles.orderWrapper}>
+          <Text style={styles.orderText}>Place an order</Text>
+          <Feather name="chevron-right" size={18} color={colors.black} />
         </View>
+      </TouchableOpacity>
+      </View>
     );
 } 
 export default Detail;
@@ -141,7 +159,7 @@ const styles= new StyleSheet.create({
         width:'60%',
     },
     priceWrapper:{
-        marginTop:20,
+        marginTop:10,
         paddingHorizontal:20,
         
 
@@ -152,7 +170,7 @@ const styles= new StyleSheet.create({
         fontSize:32,
     },
     infoWrapper:{
-        marginTop:30,
+        marginTop:20,
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
@@ -163,7 +181,7 @@ const styles= new StyleSheet.create({
     },
     
     infoItemWrapper:{
-        marginBottom:20,
+        marginBottom:10,
 
     },
     infoItemTitle:{
@@ -182,7 +200,7 @@ const styles= new StyleSheet.create({
 
     },
     ingredientWrapper:{
-        marginTop:40,
+        marginTop:30,
 
 
     },
@@ -216,6 +234,21 @@ const styles= new StyleSheet.create({
     ingredientImage:{
         resizeMode:'contain',
     },
+    orderWrapper: {
+        marginTop: 60,
+        marginHorizontal: 20,
+        backgroundColor: colors.primary,
+        borderRadius: 50,
+        paddingVertical: 25,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      orderText: {
+        fontFamily: 'MontserratBold',
+        fontSize: 14,
+        marginRight: 10,
+      },
 
 
 });
