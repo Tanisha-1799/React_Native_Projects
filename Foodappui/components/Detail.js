@@ -14,7 +14,9 @@ const Detail=({route, navigation})=>{
 
     const renderIngredientItem=({item})=>{
         return(
-            <View style={styles.ingredientItemWrapper}>
+            <View style={[styles.ingredientItemWrapper],{
+                marginLeft : item.id== '1' ? 20 : 0,
+            }}>
                <Image source={item.image} style={styles.ingredientImage}/>
             </View>
 
@@ -94,6 +96,8 @@ const Detail=({route, navigation})=>{
          />
             </View>
         </View>
+        {/*Place Order Button*/}
+        <View></View>
 
         </View>
     );
@@ -148,7 +152,7 @@ const styles= new StyleSheet.create({
         fontSize:32,
     },
     infoWrapper:{
-        marginTop:40,
+        marginTop:30,
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
@@ -194,9 +198,24 @@ const styles= new StyleSheet.create({
 
     },
     ingredientItemWrapper:{
-        
+      backgroundColor:colors.white,
+      justifyContent:'center',
+      alignItems:'center',
+      paddingHorizontal:10,
+      marginRight:15,
+      borderRadius:15, 
+      shadowColor:colors.black,
+        shadowOffset:{
+            width:0,
+            height:2,
+        },
+        shadowOpacity:0.05,
+        shadowRadius:10,
+        elevation:2, 
     },
-    ingredientImage:{},
+    ingredientImage:{
+        resizeMode:'contain',
+    },
 
 
 });
