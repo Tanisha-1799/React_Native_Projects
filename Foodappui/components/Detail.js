@@ -2,8 +2,8 @@ import React from 'react';
 import { SafeAreaView, TouchableOpacity, ScrollView, StyleSheet, Text, View, Image, FlatList, TouchableOpacityBase } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import categoriesData from '../assets/data/categoriesData';
-import popularData from '../assets/data/popularData';
+//import categoriesData from '../assets/data/categoriesData';
+//import popularData from '../assets/data/popularData';
 import colors from '../assets/colors';
 
 
