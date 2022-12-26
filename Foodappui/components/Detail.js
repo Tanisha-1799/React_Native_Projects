@@ -12,6 +12,15 @@ MaterialCommunityIcons.loadFont();
 const Detail=({route, navigation})=>{
     const {item}=route.params;
 
+    const renderIngredientItem=({item})=>{
+        return(
+            <View style={styles.ingredientItemWrapper}>
+               <Image source={item.image} style={styles.ingredientImage}/>
+            </View>
+
+        );
+    }
+
     return(
         <View style={styles.container}>
         {/*Header*/}
@@ -31,8 +40,61 @@ const Detail=({route, navigation})=>{
             
        
         </SafeAreaView>
+        {/*Title*/}
+        <View style={styles.titleWrapper}>
+            <Text style={styles.title}>{item.title}</Text>
+        </View>
 
-        
+        {/*Price*/}
+        <View style={styles.priceWrapper}>
+            <Text style={styles.priceText}>${item.price}</Text>
+        </View>
+
+        {/*Pizza Info Section */}
+        <View style={styles.infoWrapper}>
+            <View style={styles.infoLeftWrapper}>
+                <View style={styles.infoItemWrapper}>
+                    <Text style={styles.infoItemTitle}>Size</Text>
+                    <Text 
+                    style={styles.infoItemContext}>
+                    {item.sizeName} {item.sizeNumber}"</Text>
+                </View>
+                <View style={styles.infoItemWrapper}>
+                    <Text style={styles.infoItemTitle}>Crust</Text>
+                    <Text 
+                    style={styles.infoItemContext}>
+                    {item.crust}</Text>
+                </View>
+                <View style={styles.infoItemWrapper}>
+                    <Text style={styles.infoItemTitle}>Delivery In</Text>
+                    <Text 
+                    style={styles.infoItemContext}>
+                    {item.deliveryTime} mins</Text>
+                </View>
+            
+            </View>
+            <View>
+                <Image 
+                    style={styles.itemImage}
+                    source={item.image}
+                />
+            </View>
+        </View>
+
+        {/*Ingredients */}
+        <View style={styles.ingredientWrapper}>
+            <Text style={styles.ingredientTitle}>Ingredients</Text>
+            <View style={styles.ingredientListWrapper}>
+            <FlatList
+                    data={item.ingredients}
+                    renderItem={renderIngredientItem}
+                    keyExtractor={item => item.id}
+                    horizontal={true}
+                    showsVerticalScrollIndicator={false}
+         />
+            </View>
+        </View>
+
         </View>
     );
 } 
@@ -63,5 +125,78 @@ const styles= new StyleSheet.create({
         padding:12,
         borderRadius:10,
     },
+    titleWrapper:{
+        paddingHorizontal:20,
+        marginTop:20,
+
+    },
+    title:{
+        fontFamily:'MontserratBold',
+        fontSize:32,
+        color:colors.textDark,
+        width:'60%',
+    },
+    priceWrapper:{
+        marginTop:20,
+        paddingHorizontal:20,
+        
+
+    },
+    priceText:{
+        color:colors.price,
+        fontFamily:'MontserratBold',
+        fontSize:32,
+    },
+    infoWrapper:{
+        marginTop:40,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+    },
+    infoLeftWrapper:{
+        paddingLeft:20,
+
+    },
+    
+    infoItemWrapper:{
+        marginBottom:20,
+
+    },
+    infoItemTitle:{
+        fontFamily:'MontserratMedium',
+        fontSize:14,
+        color:colors.textLight,
+    },
+    infoItemContext:{
+        fontFamily:'MontserratSemiBold',
+        fontSize:18,
+        color:colors.textDark,
+    },
+    itemImage:{
+        resizeMode:'contain',
+        marginLeft:40,
+
+    },
+    ingredientWrapper:{
+        marginTop:40,
+
+
+    },
+    ingredientTitle:{
+        paddingHorizontal:20,
+        fontFamily:'MontserratBold',
+        fontSize:16,
+        color:colors.textDark,
+
+    },
+    ingredientListWrapper:{
+        paddingVertical:20,
+
+    },
+    ingredientItemWrapper:{
+        
+    },
+    ingredientImage:{},
+
 
 });
