@@ -5,6 +5,37 @@ const popularData=[
         title:'Primavera Pizza',
         weight:'540 gm',
         rating:'5.0',
+        price:399,
+        sizeName:'Medium',
+        sizeNumber:14,
+        crust:'Thin Crust',
+        deliveryTime:30,
+        ingredients:[
+            {
+                id:'1',
+                name:'ham',
+                image:require('../images/ham.png'),
+
+            },
+            {
+                id:'2',
+                name:'tomato',
+                image:require('../images/tomato.png'),
+                
+            },
+            {
+                id:'3',
+                name:'cheese',
+                image:require('../images/cheese.png'),
+                
+            },
+            {
+                id:'4',
+                name:'garlic',
+                image:require('../images/garlic.png'),
+                
+            },
+        ]
     },
     {
         id:'2',
@@ -12,6 +43,32 @@ const popularData=[
         title:'Vegetarian Pizza',
         weight:'450 gm',
         rating:'4.0',
+        price:599,
+        sizeName:'Small',
+        sizeNumber:10,
+        crust:'Thin Crust',
+        deliveryTime:40,
+        ingredients:[
+            {
+                id:'1',
+                name:'ham',
+                image:require('../images/ham.png'),
+
+            },
+            
+            {
+                id:'2',
+                name:'cheese',
+                image:require('../images/cheese.png'),
+                
+            },
+            {
+                id:'3',
+                name:'garlic',
+                image:require('../images/garlic.png'),
+                
+            },
+        ]
     },
     {
         id:'3',
@@ -19,6 +76,27 @@ const popularData=[
         title:'Pepperoni Pizza',
         weight:'700 gm',
         rating:'5.0',
+        price:999,
+        sizeName:'Large',
+        sizeNumber:18,
+        crust:'Thin Crust',
+        deliveryTime:20,
+        ingredients:[
+           
+            {
+                id:'1',
+                name:'tomato',
+                image:require('../images/tomato.png'),
+                
+            },
+            {
+                id:'2',
+                name:'cheese',
+                image:require('../images/cheese.png'),
+                
+            },
+           
+        ]
     }
 ];
 export default popularData;
