@@ -2,6 +2,7 @@ import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from './components/Home';
+import Detail from './components/Detail';
 import * as React from 'react';
 import {useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
@@ -36,6 +37,15 @@ export default function App() {
           
 
         }} />
+        <Stack.Screen 
+        name="Detail" 
+        component={Detail}
+        options={{
+          headerShown : false,
+          
+
+        }} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

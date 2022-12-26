@@ -5,3 +5,14 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import categoriesData from '../assets/data/categoriesData';
 import popularData from '../assets/data/popularData';
 import colors from '../assets/colors';
+
+const Detail=({route})=>{
+    const {item}=route.params;
+
+    return(
+        <View>
+            <Text>Details Page !!!</Text>
+        </View>
+    );
+} 
+export default Detail;
