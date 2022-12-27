@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useState } from "react";
-
+import Home from './components/Home';
 import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-
+const Stack = createNativeStackNavigator();
 const getFonts = () =>
   Font.loadAsync({
     latoBlack: require("./assets/fonts/Lato-Black.ttf"),
@@ -32,13 +32,18 @@ const getFonts = () =>
 
 
       return (
-       //you can return any component of your choice here
-        <View style={styles.container}>
-          <Text style={styles.Texts}>
-            Open up App.js to start working on your app!
-          </Text>
-          <StatusBar style="auto" />
-        </View>
+        <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen 
+          name="Home" 
+          component={Home}
+          options={{
+            headerShown : false,
+            
+  
+          }} />
+          </Stack.Navigator>
+    </NavigationContainer>
       );
 
 
