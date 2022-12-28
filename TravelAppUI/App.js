@@ -5,10 +5,10 @@ import Home from './components/Home';
 import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+//import { createStackNavigator } from '@react-navigation/stack';
+//import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const Stack = createNativeStackNavigator();
+//const Stack = createNativeStackNavigator();
 const getFonts = () =>
   Font.loadAsync({
     latoBlack: require("./assets/fonts/Lato-Black.ttf"),
@@ -33,17 +33,8 @@ const getFonts = () =>
 
       return (
         <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen 
-          name="Home" 
-          component={Home}
-          options={{
-            headerShown : false,
-            
-  
-          }} />
-          </Stack.Navigator>
-    </NavigationContainer>
+        <Text>Hello Navigation</Text>
+        </NavigationContainer>
       );
 
 
