@@ -3,6 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+
 
 const getFonts = () =>
   Font.loadAsync({
@@ -20,6 +23,15 @@ const getFonts = () =>
 
     
   });
+  function HomeScreen() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Home Screen</Text>
+      </View>
+    );
+  }
+  
+  const Stack = createNativeStackNavigator();
 
 
 
@@ -29,12 +41,13 @@ const getFonts = () =>
     if (fontsloaded) {
       return (
        //you can return any component of your choice here
-        <View style={styles.container}>
-          <Text style={styles.Texts}>
-            Open up App.js to start working on your app!
-          </Text>
-         
-        </View>
+       <NavigationContainer>
+         <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+
+       </NavigationContainer>
+       
       );
     } else {
       return (
