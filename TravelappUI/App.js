@@ -5,6 +5,7 @@ import Apploading from "expo-app-loading";
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 const getFonts = () =>
@@ -32,6 +33,7 @@ const getFonts = () =>
   }
   
   const Stack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
 
 
 
@@ -42,9 +44,9 @@ const getFonts = () =>
       return (
        //you can return any component of your choice here
        <NavigationContainer>
-         <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
+       <View style={styles.container}>
+         <Text style={styles.Texts}>Welcome to my app !!!</Text>
+       </View>
 
        </NavigationContainer>
        
