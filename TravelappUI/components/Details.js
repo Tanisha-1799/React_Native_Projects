@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from "react";
-const Home=()=>{
+const Details=()=>{
     return (
         <View>
-            <Text>Welcome to home page</Text>
+            <Text>Details</Text>
         </View>
         
     );

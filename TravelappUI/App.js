@@ -6,6 +6,11 @@ import Apploading from "expo-app-loading";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Details from './components/Details';
+import Home from './components/Home';
+import Liked from './components/Liked';
+import Profile from './components/Profile';
+
 
 
 const getFonts = () =>
@@ -24,16 +29,20 @@ const getFonts = () =>
 
     
   });
-  function HomeScreen() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-      </View>
-    );
-  }
+ 
   
   const Stack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();
+
+  const TabNavigator=()=>{
+    return(
+      <TabNavigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Liked" component={Liked} />
+        <Tab.Screen name="Profile" component={Profile} />
+      </TabNavigator>
+    );
+  }
 
 
 
@@ -42,11 +51,13 @@ const getFonts = () =>
   
     if (fontsloaded) {
       return (
-       //you can return any component of your choice here
+       
        <NavigationContainer>
-       <View style={styles.container}>
-         <Text style={styles.Texts}>Welcome to my app !!!</Text>
-       </View>
+      <Stack.Navigator>
+         <Stack.Screen name="TabNavigator" component={TabNavigator} />
+
+         
+       </Stack.Navigator>
 
        </NavigationContainer>
        

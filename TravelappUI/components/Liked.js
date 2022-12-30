@@ -3,7 +3,7 @@ import React from "react";
 const Liked=()=>{
     return (
         <View>
-            <Text>Welcome to home page</Text>
+            <Text>Liked</Text>
         </View>
         
     );
