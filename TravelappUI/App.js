@@ -37,7 +37,7 @@ const getFonts = () =>
  
   const Tab = createBottomTabNavigator();
 
-  function TabNavigator(){
+  const TabNavigator=()=>{
     return(
       <TabNavigator
         tabBarOptions={{
@@ -60,25 +60,15 @@ const getFonts = () =>
   }
 
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-     
-        <TabNavigator >
-        <Tab.Screen />
-      </TabNavigator>
-
-     
+      <Stack.Navigator>
+        <Stack.Screen name="TabNavigator" component={TabNavigator} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
