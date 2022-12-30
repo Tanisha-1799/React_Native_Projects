@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Details from './components/Details';
 import Home from './components/Home';
@@ -13,7 +13,6 @@ import Profile from './components/Profile';
 import colors from './assets/colors/colors';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 
 Entypo.loadFont();
 MaterialCommunityIcons.loadFont();
@@ -35,10 +34,10 @@ const getFonts = () =>
   });
  
   
-  const Stack = createNativeStackNavigator();
+ 
   const Tab = createBottomTabNavigator();
 
-  const TabNavigator=()=>{
+  function TabNavigator(){
     return(
       <TabNavigator
         tabBarOptions={{
@@ -61,48 +60,36 @@ const getFonts = () =>
   }
 
 
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
 
-  export default function App() {
-    const [fontsloaded, setFontsLoaded] = useState(false);
-  
-    if (fontsloaded) {
-      return (
-       
-       <NavigationContainer>
-      <Stack.Navigator>
-         <Stack.Screen name="TabNavigator" component={TabNavigator} />
+const Stack = createNativeStackNavigator();
 
-         
-       </Stack.Navigator>
+function App() {
+  return (
+    <NavigationContainer>
+     
+        <TabNavigator >
+        <Tab.Screen />
+      </TabNavigator>
 
-       </NavigationContainer>
-       
-      );
-    } else {
-      return (
-        <Apploading
-          startAsync={getFonts}
-          onFinish={() => {
-            setFontsLoaded(true);
-          }}
-          onError={console.warn}
-        />
-      );
-    }
-  }
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#fff",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    Texts: {
-      fontFamily: "latoBoldItalic",
-    },
-    tabBar:{
-      backgroundColor:colors.white,
-      borderTopLeftRadius:20,
-      borderTopRightRadius:20,
-    },
-  });
+     
+    </NavigationContainer>
+  );
+}
+
+export default App;
+
+const styles = StyleSheet.create({
+ 
+  tabBar:{
+    backgroundColor:colors.white,
+    borderTopLeftRadius:20,
+    borderTopRightRadius:20,
+  },
+});
