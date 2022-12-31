@@ -32,6 +32,16 @@ const Home=({navigation})=>{
             </SafeAreaView>
 
                     {/* Dicover */}
+            <View style={styles.discoverWrapper}>
+                <Text style={styles.discoverTitle}>Discover</Text>
+                <View style={styles.discoverCategoriesWrapper}>
+                    <Text style={styles.discoverCategoryText}>All</Text>
+                    <Text style={styles.discoverCategoryText}>All</Text>
+                    <Text style={styles.discoverCategoryText}>All</Text>
+                    <Text style={styles.discoverCategoryText}>All</Text>
+                    <Text style={styles.discoverCategoryText}>All</Text>
+                </View>
+            </View>
 
 
         </ScrollView>
