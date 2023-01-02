@@ -256,7 +256,9 @@ const styles=StyleSheet.create({
         fontSize:24,
         color:colors.black,
     },
-    learnMoreListWrapper:{},
+    learnMoreListWrapper:{
+        
+    },
     learnMoreItem:{},
     learnMoreItemImage:{},
     learnMoreItemTitle:{},
