@@ -257,11 +257,24 @@ const styles=StyleSheet.create({
         color:colors.black,
     },
     learnMoreListWrapper:{
-        
+
     },
-    learnMoreItem:{},
-    learnMoreItemImage:{},
-    learnMoreItemTitle:{},
+    learnMoreItem:{
+        width:170,
+        height:180,
+        justifyContent:'flex-end',
+    },
+    learnMoreItemImage:{
+        borderRadius:20,
+
+    },
+    learnMoreItemTitle:{
+        fontFamily:'latoBold',
+        fontSize:18,
+        color:colors.white,
+        marginHorizontal:10,
+        marginVertical:20,
+    },
     
 
 
