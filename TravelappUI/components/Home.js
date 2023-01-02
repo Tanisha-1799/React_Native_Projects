@@ -246,6 +246,20 @@ const styles=StyleSheet.create({
         fontSize:14,
         color:colors.gray,
     },
+    learnMoreWrapper:{
+        marginTop:10,
+
+    },
+    learnMoreTitle:{
+        marginHorizontal:20,
+        fontFamily:'latoBold',
+        fontSize:24,
+        color:colors.black,
+    },
+    learnMoreListWrapper:{},
+    learnMoreItem:{},
+    learnMoreItemImage:{},
+    learnMoreItemTitle:{},
     
 
 
