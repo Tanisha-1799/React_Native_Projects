@@ -18,7 +18,10 @@ const Home=({navigation})=>{
 
     const renderDiscoverItem=({item})=>{
         return (
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={()=>navigation.navigate('Details', {
+                item:item,
+            })}>
                 <ImageBackground 
                 source={item.image}
                 style={styles.discoverItem}
@@ -81,6 +84,8 @@ const Home=({navigation})=>{
                 </View>
             </View>
 
+            {/* Activities Section */}
+
 
         </ScrollView>
             
@@ -128,6 +133,34 @@ const styles=StyleSheet.create({
         fontFamily:'latoRegular',
         fontSize:16,
         color:colors.gray,
+    },
+    discoverItem:{
+        width:170,
+        height:250,
+        justifyContent:'flex-end',
+        paddingHorizontal:10,
+        paddingVertical:15,
+        marginRight:20,
+        marginTop:10,
+    },
+    discoverItemTitle:{
+        fontFamily:'latoBold',
+        fontSize:18,
+        color:colors.white,
+    },
+    discoverItemImage:{
+        borderRadius:20,
+    },
+    discoverItemLocationWrapper:{
+        flexDirection:'row',
+        alignItems:'center',
+        marginTop:5,
+    },
+    discoverItemLocationText:{
+        marginLeft:5,
+        fontFamily:'latoBold',
+        fontSize:14,
+        color:colors.white,
     },
 
 
