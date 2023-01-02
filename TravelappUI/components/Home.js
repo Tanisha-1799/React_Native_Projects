@@ -1,7 +1,8 @@
-import { StyleSheet, ScrollView, SafeAreaView, Image, Text, View, Button } from 'react-native';
+import { StyleSheet, FlatList, TouchableOpacity, ImageBackground, ScrollView, SafeAreaView, Image, Text, View, Button } from 'react-native';
 import React from "react";
 import colors from '../assets/colors/colors';
 import Feather from 'react-native-vector-icons/Feather';
+import Entypo from 'react-native-vector-icons/Entypo';
 import activitiesData from '../assets/data/activitiesData';
 import discoverCategoriesData from '../assets/data/discoverCategoriesData';
 import discoverData from '../assets/data/discoverData';
@@ -9,9 +10,36 @@ import learnMoreData from '../assets/data/learnMoreData';
 import prr2 from '../assets/images/prr2.jpg';
 
 
+
 Feather.loadFont();
+Entypo.loadFont();
 
 const Home=({navigation})=>{
+
+    const renderDiscoverItem=({item})=>{
+        return (
+            <TouchableOpacity>
+                <ImageBackground 
+                source={item.image}
+                style={styles.discoverItem}
+                imageStyle={styles.discoverItemImage}
+                >
+                <Text style={styles.discoverItemTitle}>{item.title}</Text>
+                <View style={styles.discoverItemLocationWrapper}>
+                    <Entypo name="location-pin" size={18} color={colors.white}/>
+                    <Text style={styles.discoverItemLocationText}>{item.location}</Text>
+                </View>
+
+
+
+                </ImageBackground>
+            </TouchableOpacity>
+        )
+    }
+
+
+
+
     return (
         <View style={styles.container}>
         <ScrollView>
@@ -31,15 +59,25 @@ const Home=({navigation})=>{
 
             </SafeAreaView>
 
-                    {/* Dicover */}
+                    {/* Discover section */}
             <View style={styles.discoverWrapper}>
                 <Text style={styles.discoverTitle}>Discover</Text>
                 <View style={styles.discoverCategoriesWrapper}>
-                    <Text style={styles.discoverCategoryText}>All</Text>
-                    <Text style={styles.discoverCategoryText}>All</Text>
-                    <Text style={styles.discoverCategoryText}>All</Text>
-                    <Text style={styles.discoverCategoryText}>All</Text>
-                    <Text style={styles.discoverCategoryText}>All</Text>
+                    <Text style={[styles.discoverCategoryText,{
+                        color:colors.orange,
+                    }]}>All</Text>
+                    <Text style={styles.discoverCategoryText}>Destinations</Text>
+                    <Text style={styles.discoverCategoryText}>Cities</Text> 
+                    <Text style={styles.discoverCategoryText}>Experiences</Text>
+                </View>
+                <View style={styles.discoverItemWrapper}>
+                    <FlatList 
+                        data={discoverData}
+                        renderItem={renderDiscoverItem}
+                        keyExtractor={(item)=>item.id}
+                        horizontal 
+                        showsHorizontalScrollIndicator={false}
+                    />
                 </View>
             </View>
 
@@ -70,6 +108,26 @@ const styles=StyleSheet.create({
         height:52,
         borderRadius:10,
        
+    },
+    discoverWrapper:{
+        marginHorizontal:20,
+        marginTop:20,
+
+    },
+    discoverTitle:{
+        fontFamily:'latoBold',
+        fontSize:32,
+
+    },
+    discoverCategoriesWrapper:{
+        flexDirection:'row',
+        marginTop:20,
+    },
+    discoverCategoryText:{
+        marginRight:30,
+        fontFamily:'latoRegular',
+        fontSize:16,
+        color:colors.gray,
     },
 
 
