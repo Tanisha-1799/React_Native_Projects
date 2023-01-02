@@ -20,7 +20,9 @@ const Home=({navigation})=>{
         return(
             <ImageBackground 
             source={item.image}
-            style={styles.learnMoreItem}
+            style={[styles.learnMoreItem,{
+                marginLeft:item.id==='learnMore-1'?20:0
+            }]}
             imageStyle={styles.learnMoreItemImage}
             >
             <Text style={styles.learnMoreItemTitle}>{item.title}</Text>
@@ -257,12 +259,14 @@ const styles=StyleSheet.create({
         color:colors.black,
     },
     learnMoreListWrapper:{
+        paddingVertical:10,
 
     },
     learnMoreItem:{
         width:170,
         height:180,
         justifyContent:'flex-end',
+        marginRight:20,
     },
     learnMoreItemImage:{
         borderRadius:20,
