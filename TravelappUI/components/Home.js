@@ -273,7 +273,7 @@ const styles=StyleSheet.create({
 
     },
     learnMoreItemTitle:{
-        fontFamily:'latoBold',
+        fontFamily:'latoBoldItalic',
         fontSize:18,
         color:colors.white,
         marginHorizontal:10,
