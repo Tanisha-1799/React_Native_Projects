@@ -15,6 +15,18 @@ Feather.loadFont();
 Entypo.loadFont();
 
 const Home=({navigation})=>{
+    const renderActivityItem=({item})=>{
+        return(
+            <View style={[styles.activityItemWrapper, {
+                marginLeft:item.id==='activities-1'?20:0
+            }]}>
+                <Image source={item.image} style={styles.activityItemImage}/>
+                <Text style={styles.activityItemText}>{item.title}</Text>
+            </View>
+
+
+        );
+    }
 
     const renderDiscoverItem=({item})=>{
         return (
@@ -85,6 +97,18 @@ const Home=({navigation})=>{
             </View>
 
             {/* Activities Section */}
+            <View style={styles.activitiesWrapper}>
+                <Text style={styles.activitiesTitle}>Activities</Text>
+                <View style={styles.activitiesItemWrapper}>
+                    <FlatList 
+                        data={activitiesData}
+                        renderItem={renderActivityItem}
+                        keyExtractor={(item)=>item.id}
+                        horizontal 
+                        showsHorizontalScrollIndicator={false}
+                    />
+                </View>
+            </View>
 
 
         </ScrollView>
@@ -162,6 +186,36 @@ const styles=StyleSheet.create({
         fontSize:14,
         color:colors.white,
     },
+    activitiesWrapper:{
+       marginTop:10,
+      
+
+    },
+    activitiesItemWrapper:{
+        paddingVertical:10,
+    },
+    activitiesTitle:{
+        marginHorizontal:20,
+        fontFamily:'latoBold',
+        fontSize:24,
+        color:colors.black,
+    },
+    activityItemWrapper:{
+        justifyContent:'flex-end',
+        alignItems:'center',
+        marginRight:20,
+    },
+    activityItemImage:{
+        width:36,
+
+    },
+    activityItemText:{
+        marginTop:5,
+        fontFamily:'latoBold',
+        fontSize:14,
+        color:colors.gray,
+    },
+    
 
 
 });
