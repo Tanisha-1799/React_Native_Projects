@@ -15,6 +15,22 @@ Feather.loadFont();
 Entypo.loadFont();
 
 const Home=({navigation})=>{
+
+    const renderLearnMoreItem=({item})=>{
+        return(
+            <ImageBackground 
+            source={item.image}
+            style={styles.learnMoreItem}
+            imageStyle={styles.learnMoreItemImage}
+            >
+            <Text style={styles.learnMoreItemTitle}>{item.title}</Text>
+            
+
+
+
+            </ImageBackground>
+        )
+    }
     const renderActivityItem=({item})=>{
         return(
             <View style={[styles.activityItemWrapper, {
@@ -108,6 +124,21 @@ const Home=({navigation})=>{
                         showsHorizontalScrollIndicator={false}
                     />
                 </View>
+            </View>
+
+            {/* Learn More Section */}
+
+            <View style={styles.learnMoreWrapper}>
+            <Text style={styles.learnMoreTitle}>Learn More</Text>
+               <View style={styles.learnMoreListWrapper}>
+               <FlatList 
+                    data={learnMoreData}
+                    renderItem={renderLearnMoreItem}
+                    keyExtractor={(item)=>item.id}
+                    horizontal 
+                    showsHorizontalScrollIndicator={false}
+                />
+               </View>
             </View>
 
 
