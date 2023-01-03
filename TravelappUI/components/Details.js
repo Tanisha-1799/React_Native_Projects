@@ -56,7 +56,10 @@ const Details=({route, navigation})=>{
                 </View>
             </View>
             {/* Button section */}
-            <TouchableOpacity style={styles.buttonWrapper}>
+            <TouchableOpacity 
+            style={styles.buttonWrapper}
+            onPress={()=>alert("Congrats !!! You Booked a trip !! ")}
+            >
                 <Text style={styles.buttonText}>Book Now</Text>
 
             </TouchableOpacity>
@@ -189,7 +192,7 @@ const styles=StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:colors.orange,
-        borderRadius:18,
+        borderRadius:15,
     },
     buttonText:{
         fontFamily:'latoBoldItalic',
