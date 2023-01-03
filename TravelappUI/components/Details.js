@@ -39,6 +39,7 @@ const styles=StyleSheet.create({
     },
     backgroundImage:{
         height:height*0.6,
+        justifyContent:'space-between',
     },
     descriptionWrapper:{
         flex:1,
@@ -54,8 +55,24 @@ const styles=StyleSheet.create({
         marginTop:60,
 
     },
-    titleWrapper:{},
-    itemTitle:{},
-    locationWrapper:{},
-    locationTitle:{},
+    titleWrapper:{
+        marginHorizontal:20,
+        marginBottom:30,
+
+    },
+    itemTitle:{
+        fontFamily:'latoBold',
+        fontSize:32,
+        color:colors.white,
+    },
+    locationWrapper:{
+        flexDirection:'row',
+        marginTop:5,
+        alignItems:'center',
+    },
+    locationTitle:{
+        fontFamily:'latoBold',
+        fontSize:18,
+        color:colors.white,
+    },
 });
