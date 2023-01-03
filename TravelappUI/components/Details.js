@@ -32,6 +32,30 @@ const Details=({route, navigation})=>{
             <Text style={styles.descriptionText}>{item.description}</Text>
 
             </View>
+            <View style={styles.infoWrapper}>
+                <View style={styles.infoItems}>
+                    <Text style={styles.infoTitle}>PRICE</Text>
+                    <View style={styles.infoTextWrapper}>
+                        <Text style={styles.infoText}>${item.price}</Text>
+                        <Text style={styles.infoSubText}>/persons</Text>
+                    </View>                                        
+                </View>
+                <View style={styles.infoItems}>
+                    <Text style={styles.infoTitle}>RATING</Text>
+                    <View style={styles.infoTextWrapper}>
+                        <Text style={styles.infoText}>{item.rating}</Text>
+                        <Text style={styles.infoSubText}>/5</Text>
+                    </View>                                        
+                </View>
+                <View style={styles.infoItems}>
+                    <Text style={styles.infoTitle}>DURATION</Text>
+                    <View style={styles.infoTextWrapper}>
+                        <Text style={styles.infoText}>{item.duration}</Text>
+                        <Text style={styles.infoSubText}>hours</Text>
+                    </View>                                        
+                </View>
+            </View>
+
 
            </View>
         </View>
@@ -121,4 +145,5 @@ const styles=StyleSheet.create({
         color:colors.darkGray,
         height:75,
     },
+    
 });
