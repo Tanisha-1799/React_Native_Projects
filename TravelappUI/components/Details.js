@@ -24,6 +24,9 @@ const Details=({route, navigation})=>{
                </View>
            </ImageBackground>
            <View style={styles.descriptionWrapper}>
+            <View style={styles.heartWrapper}>
+                <Entypo name="heart" size={32} color={colors.orange} />
+            </View>
 
            </View>
         </View>
@@ -74,5 +77,27 @@ const styles=StyleSheet.create({
         fontFamily:'latoBold',
         fontSize:18,
         color:colors.white,
+    },
+    heartWrapper:{
+        position:'absolute',
+        right:40,
+        top:-25,
+        width:50,
+        height:50,
+        backgroundColor:colors.white,
+        borderRadius:50,
+        justifyContent:'center',
+        alignItems:'center',
+        shadowColor:'#000',
+        shadowOffset:{
+            width:0,
+            height:2,
+
+        },
+        shadowOpacity:0.25,
+        shadowRadius:4.04,
+        elevation:10,
+
+
     },
 });
