@@ -145,5 +145,13 @@ const styles=StyleSheet.create({
         color:colors.darkGray,
         height:75,
     },
-    
+    infoWrapper:{
+        
+    },
+    infoItems:{},
+    infoTitle:{},
+    infoTextWrapper:{},
+    infoText:{},
+    infoSubText:{},
+
 });
