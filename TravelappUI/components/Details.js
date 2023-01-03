@@ -148,13 +148,13 @@ const styles=StyleSheet.create({
         fontFamily:'latoRegular',
         fontSize:16,
         color:colors.darkGray,
-        height:75,
+        height:95,
     },
     infoWrapper:{
         flexDirection:'row',
         marginHorizontal:20,
         justifyContent:'space-between',
-        marginTop:20,
+        marginTop:30,
 
     },
     infoItems:{
@@ -181,7 +181,20 @@ const styles=StyleSheet.create({
         fontSize:14,
         color:colors.gray,
     },
-    buttonWrapper:{},
-    buttonText:{},
+    buttonWrapper:{
+        marginHorizontal:20,
+        marginTop:30,
+        paddingVertical:15,
+
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:colors.orange,
+        borderRadius:18,
+    },
+    buttonText:{
+        fontFamily:'latoBoldItalic',
+        fontSize:20,
+        color:colors.white,
+    },
 
 });
