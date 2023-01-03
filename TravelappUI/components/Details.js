@@ -146,12 +146,35 @@ const styles=StyleSheet.create({
         height:75,
     },
     infoWrapper:{
+        flexDirection:'row',
+        marginHorizontal:20,
+        justifyContent:'space-between',
+        marginTop:20,
+
+    },
+    infoItems:{
+        
         
     },
-    infoItems:{},
-    infoTitle:{},
-    infoTextWrapper:{},
-    infoText:{},
-    infoSubText:{},
+    infoTitle:{
+        fontFamily:'latoBold',
+        fontSize:12,
+        color:colors.gray,
+    },
+    infoTextWrapper:{
+        flexDirection:'row',
+        alignItems:'flex-end',
+        marginTop:5,
+    },
+    infoText:{
+        fontFamily:'latoBold',
+        fontSize:24,
+        color:colors.orange,
+    },
+    infoSubText:{
+        fontFamily:'latoBold',
+        fontSize:14,
+        color:colors.gray,
+    },
 
 });
