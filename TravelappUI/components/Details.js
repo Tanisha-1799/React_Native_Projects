@@ -27,6 +27,11 @@ const Details=({route, navigation})=>{
             <View style={styles.heartWrapper}>
                 <Entypo name="heart" size={32} color={colors.orange} />
             </View>
+            <View style={styles.descriptionTextWrapper}>
+            <Text style={styles.descriptionTitle}> Description</Text>
+            <Text style={styles.descriptionText}>{item.description}</Text>
+
+            </View>
 
            </View>
         </View>
@@ -99,5 +104,21 @@ const styles=StyleSheet.create({
         elevation:10,
 
 
+    },
+    descriptionTextWrapper:{
+        marginTop:20,
+        marginHorizontal:20,
+    },
+    descriptionTitle:{
+        fontFamily:'latoBold',
+        fontSize:24,
+        color:colors.black,
+    },
+    descriptionText:{
+        marginTop:10,
+        fontFamily:'latoRegular',
+        fontSize:16,
+        color:colors.darkGray,
+        height:75,
     },
 });
