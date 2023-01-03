@@ -55,6 +55,11 @@ const Details=({route, navigation})=>{
                     </View>                                        
                 </View>
             </View>
+            {/* Button section */}
+            <TouchableOpacity style={styles.buttonWrapper}>
+                <Text style={styles.buttonText}>Book Now</Text>
+
+            </TouchableOpacity>
 
 
            </View>
@@ -176,5 +181,7 @@ const styles=StyleSheet.create({
         fontSize:14,
         color:colors.gray,
     },
+    buttonWrapper:{},
+    buttonText:{},
 
 });
