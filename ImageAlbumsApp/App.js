@@ -1,7 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import React, { useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import * as Font from "expo-font";
+import Apploading from "expo-app-loading";
 export default function App() {
+
+  const getFonts = () =>
+  Font.loadAsync({
+    limelight: require(),
+    indie: require(),
+  });
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
