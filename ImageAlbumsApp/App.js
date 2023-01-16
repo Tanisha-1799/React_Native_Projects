@@ -3,17 +3,39 @@ import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 
+const getFonts = () =>
+  Font.loadAsync({
+   
+  });
+
 
 
 export default function App() {
 
  
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-     
-    </View>
-  );
+  const [fontsloaded, setFontsLoaded] = useState(false);
+
+  if (fontsloaded) {
+    return (
+     //you can return any component of your choice here
+      <View style={styles.container}>
+        <Text style={styles.Texts}>
+          Open up App.js to start working on your app!
+        </Text>
+      
+      </View>
+    );
+  } else {
+    return (
+      <Apploading
+        startAsync={getFonts}
+        onFinish={() => {
+          setFontsLoaded(true);
+        }}
+        onError={console.warn}
+      />
+    );
+  }
 }
 
 const styles = StyleSheet.create({
