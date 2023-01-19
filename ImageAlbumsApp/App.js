@@ -3,49 +3,49 @@ import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import Apploading from "expo-app-loading";
 import Feather from '@expo/vector-icons/Feather'
-//import { useFonts, Nunito_400Regular as NunitoRegular, Nunito_700Bold as NunitoBold } from '@expo-google-fonts/nunito';
+import { useFonts, Nunito_400Regular as NunitoRegular, Nunito_700Bold as NunitoBold } from '@expo-google-fonts/nunito';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 
-const getFonts = () =>
-  Font.loadAsync({
-   
-  });
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: '#FAFAFA'
+  },
+};
 
-
-
-export default function App() {
-
- 
-  const [fontsloaded, setFontsLoaded] = useState(false);
-
-  if (fontsloaded) {
-    return (
-     //you can return any component of your choice here
-      <View style={styles.container}>
-        <Text style={styles.Texts}>
-          Open up App.js to start working on your app!
-        </Text>
-      
-      </View>
-    );
-  } else {
-    return (
-      <Apploading
-        startAsync={getFonts}
-        onFinish={() => {
-          setFontsLoaded(true);
-        }}
-        onError={console.warn}
-      />
-    );
-  }
+// Loads the Feather icons (https://docs.expo.io/guides/icons/)
+function cacheFonts(fonts) {
+  return fonts.map(font => Font.loadAsync(font));
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  const [assetsReady, setAssetsReady] = useState(false);
+
+  async function _loadFonts() {
+    const iconFontAssets = cacheFonts([Feather.font])
+    await Promise.all([...iconFontAssets]);
+  }
+
+  // Loads the Nunito font (https://docs.expo.io/guides/using-custom-fonts/)
+  let [fontsLoaded] = useFonts({
+    NunitoRegular, NunitoBold
+  });
+
+  // If the fonts or assets are not loaded, we show a default App Loading screen.
+  // Otherwise, we return our Photo Sharing App!
+  if (!fontsLoaded || !assetsReady) {
+    return <AppLoading
+              startAsync={_loadFonts}
+              onFinish={() => setAssetsReady(true)}
+              onError={console.warn}
+            />
+  }
+  return (
+    <NavigationContainer theme={MyTheme}>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>Let's do this 🔥🚀</Text>
+      </View>
+    </NavigationContainer>
+  );
+}
