@@ -44,7 +44,7 @@ export default function App() {
   return (
     <NavigationContainer theme={MyTheme}>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>HIII EVERYONE I AM TANISHA 🔥🚀</Text>
+        <Text>This is Image Appp !!! 🔥🚀</Text>
       </View>
     </NavigationContainer>
   );
