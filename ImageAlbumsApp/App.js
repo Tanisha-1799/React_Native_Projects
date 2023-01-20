@@ -44,7 +44,7 @@ export default function App() {
   return (
     <NavigationContainer theme={MyTheme}>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>This is Image Album App !!! 🔥🚀</Text>
+        <Text>Here we will be using the font nonito🔥🚀</Text>
       </View>
     </NavigationContainer>
   );
