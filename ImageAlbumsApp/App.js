@@ -44,7 +44,7 @@ export default function App() {
   return (
     <NavigationContainer theme={MyTheme}>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Here we will be using the font nonito🔥🚀</Text>
+        <Text>Let's do it !!!🔥🚀</Text>
       </View>
     </NavigationContainer>
   );
