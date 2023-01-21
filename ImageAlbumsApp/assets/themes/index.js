@@ -41,7 +41,7 @@ const theme = {
     },
     imageHeight: {
       xs: 40,
-      s: 100,
+      s: 90,
       m: 112,
       l: 123,
     },
