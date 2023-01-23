@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 
-const Albums=()=>{
+const Albums=({navigation})=>{
     return(
         <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
             <Text>Albums Page !!!</Text>
+            <Pressable onPress={()=>navigation.navigate("Shared Album")}>
+                <Text>Click Me !!</Text>
+            </Pressable>
         </View>
     );
 };
