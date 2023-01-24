@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import theme from '../../assets/themes';
 
 const Avatars = ({avatars}) => {
@@ -26,6 +26,8 @@ const styles=StyleSheet.create({
         width:theme.imageHeight.xs,
         height:theme.imageHeight.xs,
         borderRadius:theme.imageHeight.xs/2,
+        borderWidth:theme.borderRadius.xs,
+        borderColor:theme.colors.white,
 
     },
 
