@@ -40,6 +40,9 @@ const styles=StyleSheet.create({
 
     },
     imageContentContainer:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
 
     },
     imageTitle:{

@@ -10,6 +10,11 @@ const Avatars = ({avatars}) => {
                     source={item.image}
                     style={[
                         styles.avatarStyle,
+                        //the higher the z index that element will appear on top 
+                        //of the element that has lower z index
+                        //it will look as stacked upon each other
+                        {zIndex:index, marginLeft:(index*16)},
+                        index!==(avatars.length-1) && {position: 'absolute'}
                     ]}
                 />
                 
