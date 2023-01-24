@@ -1,6 +1,7 @@
 import React from 'react';
 import theme from '../../assets/themes';
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
+import Avatars from './Avatars';
 
 const Card = ({item}) => {
     return (
@@ -17,6 +18,7 @@ const Card = ({item}) => {
 
                     <View>
                         {/*Avatars go here !!!*/}
+                        <Avatars avatars={item.avatars}/>
                     </View>
 
                 </View>
