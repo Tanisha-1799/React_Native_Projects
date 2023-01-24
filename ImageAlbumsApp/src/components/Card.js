@@ -33,11 +33,21 @@ const styles=StyleSheet.create({
         marginTop:theme.spacing.m,
         marginHorizontal:theme.spacing.m,
         paddingHorizontal:theme.spacing.m,
-        
+        borderRadius:theme.borderRadius.m,
+        justifyContent:'center',
+
     },
-    imageContentContainer:{},
-    imageTitle:{},
-    imageSubtitle:{},
+    imageContentContainer:{
+
+    },
+    imageTitle:{
+        ...theme.textVariants.h1,
+        color:theme.colors.white,
+    },
+    imageSubtitle:{
+        ...theme.textVariants.body2,
+        color:theme.colors.white,
+    },
 })
 
 export default Card;
