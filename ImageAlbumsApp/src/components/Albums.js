@@ -8,14 +8,10 @@ const Albums=({navigation})=>{
         <>
           <ScrollView>
             <View style={styles.albumContainer}>
-            {albumPage.map((item)=>
-              
-                
-                    <View>
+            {albumPage.map((item, index)=>              
+                    <View key={index}>
                     <Text>{item.title}</Text>
-                    </View>
-                
-              
+                    </View>            
             )}
 
             </View>
