@@ -1,15 +1,23 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, ScrollView, StyleSheet } from 'react-native';
+import theme from '../../assets/themes/index';
 
 const Albums=({navigation})=>{
     return(
-        <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-            <Text>Albums Page !!!</Text>
-            <Pressable onPress={()=>navigation.navigate("Shared Album")}>
-                <Text>Click Me !!</Text>
-            </Pressable>
-        </View>
+        <>
+          <ScrollView>
+            <View style={styles.albumContainer}>
+
+            </View>
+          </ScrollView>  
+        </>
     );
 };
+
+const styles=StyleSheet.create({
+    albumContainer:{
+        marginBottom:theme.spacing.l,
+    },
+})
 
 export default Albums;
