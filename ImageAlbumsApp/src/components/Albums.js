@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Pressable, ScrollView, StyleSheet } from 'react-native';
 import theme from '../../assets/themes/index';
 import albumPage from '../../assets/data/albumPage';
+import Card from './Card';
 
 const Albums=({navigation})=>{
     return(
@@ -10,7 +11,7 @@ const Albums=({navigation})=>{
             <View style={styles.albumContainer}>
             {albumPage.map((item, index)=>              
                     <View key={index}>
-                    <Text>{item.title}</Text>
+                    <Card item={item}/>
                     </View>            
             )}
 
@@ -22,7 +23,7 @@ const Albums=({navigation})=>{
 
 const styles=StyleSheet.create({
     albumContainer:{
-        //marginBottom:theme.spacing.l,
+        marginBottom:theme.spacing.l,
     },
 })
 
