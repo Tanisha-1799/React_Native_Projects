@@ -14,7 +14,8 @@ const Albums=({navigation})=>{
                     <Card item={item}/>
                     </View> 
 
-                    //Add Separator if the index is 1           
+                    //Add Separator if the index is 1   
+                   // {index === 1 <>}        
             )}
 
             </View>
