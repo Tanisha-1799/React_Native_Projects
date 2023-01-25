@@ -1,13 +1,15 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import SharedAlbumTitleCard from './SharedAlbumTitleCard';
 
 const SharedAlbum = ({route}) => {
 const {album}=route.params;
 
     return (
-        <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-            <Text>Shared Album Page !!</Text>
-        </View>
+       <ScrollView>
+            <SharedAlbumTitleCard album={album} />
+
+       </ScrollView>
         
     );
 };
