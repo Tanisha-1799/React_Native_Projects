@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import theme from '../../assets/themes';
 
 const SharedAlbumTitleCard = ({album}) => {
@@ -8,6 +8,16 @@ const SharedAlbumTitleCard = ({album}) => {
             source={album.background}
             style={styles.imageBackground}
         >
+        <View style={styles.topImageBackground}>
+            <View>
+                <Text style={styles.imageTitle}>{album.title}</Text>
+                <Text style={styles.imageSubTitle}>{`Created by ${album.user}`}</Text>
+            </View>
+            <View>
+                <Text style={styles.imageNumber}>102 photos</Text>
+            </View>
+
+        </View>
 
         </ImageBackground>
     );
@@ -23,7 +33,7 @@ const styles=StyleSheet.create({
         paddingHorizontal:theme.spacing.m,
         borderRadius:theme.borderRadius.m,
         justifyContent:'flex-end',
-        
+
     },
 });
 
