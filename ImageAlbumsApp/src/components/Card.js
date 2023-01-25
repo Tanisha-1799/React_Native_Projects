@@ -3,13 +3,13 @@ import theme from '../../assets/themes';
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import Avatars from './Avatars';
 
-const Card = ({item}) => {
+const Card = ({item, navigation}) => {
     return (
         <ImageBackground
             source={item.background}
             style={styles.imageBackground}
         >
-            <Pressable>
+            <Pressable onPress={()=>navigation.navigate("Shared Album")}>
                 <View style={styles.imageContentContainer}>
                     <View>
                         <Text style={styles.imageTitle}>{item.title}</Text>
