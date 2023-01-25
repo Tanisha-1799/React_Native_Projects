@@ -8,7 +8,7 @@ const SharedAlbumTitleCard = ({album}) => {
             source={album.background}
             style={styles.imageBackground}
         >
-        <View style={styles.topImageBackground}>
+        <View style={styles.imageContentContainer}>
             <View>
                 <Text style={styles.imageTitle}>{album.title}</Text>
                 <Text style={styles.imageSubTitle}>{`Created by ${album.user}`}</Text>
@@ -31,9 +31,28 @@ const styles=StyleSheet.create({
         marginTop:theme.spacing.m,
         marginHorizontal:theme.spacing.m,
         paddingHorizontal:theme.spacing.m,
+        paddingVertical:theme.spacing.m,
         borderRadius:theme.borderRadius.m,
         justifyContent:'flex-end',
 
+    },
+    imageContentContainer:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+
+    },
+    imageTitle:{
+        ...theme.textVariants.h1,
+        color:theme.colors.white,
+    },
+    imageSubTitle:{
+        ...theme.textVariants.body2,
+        color:theme.colors.white,
+    },
+    imageNumber:{
+        ...theme.textVariants.body3,
+        color:theme.colors.white,
     },
 });
 
