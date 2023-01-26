@@ -38,7 +38,7 @@ const styles=StyleSheet.create({
     },
     imageContentContainer:{
         flexDirection:'row',
-        alignItems:'center',
+        alignItems:'flex-end',
         justifyContent:'space-between',
 
     },
@@ -52,7 +52,7 @@ const styles=StyleSheet.create({
     },
     imageNumber:{
         ...theme.textVariants.body3,
-        color:theme.colors.white,
+        color:theme.colors.gray,
     },
 });
 
