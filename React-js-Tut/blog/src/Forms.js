@@ -4,18 +4,28 @@ export default class Forms extends React.Component{
     constructor(){
         super();
         this.state={
+            user:null,
+            password:null
 
         }
+    }
+    submit() {
+        console.warn(this.state);
+        
     }
     render(){
         return(
             <div>
                 <h1>Form Handling</h1>
-                <input type="text" name="user" onChange={()=>{}} />
+                <input type="text" name="user" 
+                onChange={(e)=>{this.setState({user:e.target.value})}} />
                 <br /><br />
-                <input type="text" name="password" onChange={()=>{}} />
+                <p></p>
+                <input type="text" name="password" 
+                onChange={(e)=>{this.setState({password:e.target.value})}} />
                 <br /><br />
-                <button>Submit</button>
+                <button onClick={()=>{this.submit()}}>Submit</button>
+                <p></p>
             </div>
         )
     }
