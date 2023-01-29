@@ -4,6 +4,7 @@ import Home from './Home';
 import Profile from './Profile';
 import About from './About';
 import React,{useState,useEffect} from 'react';
+import Forms from './Forms';
 
 function App() {
   //making use of a basic hook
@@ -17,14 +18,12 @@ function App() {
   },[count==5]);
   
   return (
-    <div className="App">      
-        {/*<Home text={"This is the Home page"} data={{name:"Samantha"}}/>
-        <Profile text={"This is the profile page"} data={{name:"peter"}}/>
-        <About />
-        */}  
-        <h1>Learning hooks !!!</h1>
-        <h2>Counter:{count}</h2>
-        <button onClick={()=>{setCount(count+1)}}>Increment</button>    
+    <div className="App">  
+   
+      <h1>Form in react</h1>
+      <Forms />
+
+     
      
     </div>
   );
