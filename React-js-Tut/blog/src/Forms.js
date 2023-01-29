@@ -7,7 +7,12 @@ export default class Forms extends React.Component{
             user:'',
             password:'',
             userError:'',
-            passwordError:''
+            passwordError:'',
+            list:[
+                {name:"Antonio",phone:"111",email:"antonio@123.com"},
+                {name:"Bassanio",phone:"123",email:"bassanio@123.com"},
+                {name:"Shylock",phone:"112",email:"shylock@123.com"}
+            ]
 
         }
     }
@@ -28,6 +33,7 @@ export default class Forms extends React.Component{
     }
     submit() {
        //validation of form
+       this.setState({userError:"",passwordError:""})
        if(this.valid()){
         alert("Form submitted successfully !!");
        }
@@ -48,6 +54,15 @@ export default class Forms extends React.Component{
                 <p>{this.state.passwordError}</p>
                 <br />
                 <button onClick={()=>{this.submit()}}>Submit</button>
+                <h1>Listing with Map</h1>
+                {
+                    this.state.list.map((item)=>
+                        <div>
+                            <h1>Name:{item.name} phone:{item.phone} email:{item.email}</h1>
+                            <br />
+                        </div>
+                    )
+                }
                 
             </div>
         )
