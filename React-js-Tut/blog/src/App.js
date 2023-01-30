@@ -23,6 +23,7 @@ class App extends React.Component{
     fetch("https://reqres.in/api/users").then((res)=>{
       res.json().then((result)=>{
         console.warn(result)
+        this.setState({users:result.data})
       })
     })
   }
@@ -54,6 +55,21 @@ class App extends React.Component{
     
     </Router>   */}
     <h1>Fetching Api Data</h1>
+    {
+      this.state.users ?
+      this.state.users.map((item,i)=>
+      <div>
+        <p>{i}---
+        {item.first_name} 
+        {item.last_name}
+        ----
+        {item.email}
+        </p>
+      </div>
+      )
+      :
+      null
+    }
      
     </div>
   );
