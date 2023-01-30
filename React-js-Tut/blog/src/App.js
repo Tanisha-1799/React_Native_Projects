@@ -10,6 +10,7 @@ import ContactPage from './ContactPage';
 import HelpPage from './HelpPage';
 import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom'
 import Users from './Users';
+import ErrorBound from './ErrorBound';
 
 class App extends React.Component{
   constructor(){
@@ -72,7 +73,10 @@ class App extends React.Component{
       null
     }*/}
     <h1>Error Boundary in React</h1>
-    <Users />
+   {/**Sending other components as a children in parent component */}
+   <ErrorBound>
+   <Users />
+   </ErrorBound>
      
     </div>
   );
