@@ -9,6 +9,7 @@ import WelcomePage from './WelcomePage';
 import ContactPage from './ContactPage';
 import HelpPage from './HelpPage';
 import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom'
+import Users from './Users';
 
 class App extends React.Component{
   constructor(){
@@ -53,7 +54,7 @@ class App extends React.Component{
     <Route path="/help" element={<HelpPage />} />
     </Routes>
     
-    </Router>   */}
+    </Router>   
     <h1>Fetching Api Data</h1>
     {
       this.state.users ?
@@ -69,7 +70,9 @@ class App extends React.Component{
       )
       :
       null
-    }
+    }*/}
+    <h1>Error Boundary in React</h1>
+    <Users />
      
     </div>
   );
