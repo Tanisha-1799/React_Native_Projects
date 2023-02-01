@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
+import theme from '../../assets/themes';
 
 
 //creating component to display the image in list form
@@ -34,10 +35,18 @@ const ImageGallery = ({images}) => {
 };
 const styles=StyleSheet.create({
     galleryContainer:{
-        
+        alignItems:'center',
+        marginBottom:theme.spacing.l,
     },
-    galleryText:{},
-    galleryImage:{},
+    galleryText:{
+        ...theme.textVariants.body3,
+        color:theme.colors.gray,
+    },
+    galleryImage:{
+        height:theme.imageHeight.l,
+        width:theme.imageHeight.l,
+        margin:2,
+    },
 
 })
 
