@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import SharedAlbumTitleCard from './SharedAlbumTitleCard';
 import Avatars from './Avatars';
 import theme from '../../assets/themes';
+import ImageGallery from './ImageGallery';
 
 const SharedAlbum = ({route}) => {
 const {album}=route.params;
@@ -15,6 +16,7 @@ const {album}=route.params;
             <Text style={styles.avatarContainerText}>{`${album.avatars.length} people`}</Text>
 
             </View>
+            <ImageGallery />
 
        </ScrollView>
         
@@ -37,7 +39,7 @@ const styles=StyleSheet.create({
     avatarContainerText:{
         ...theme.textVariants.body3,
         color:theme.colors.gray,
-        
+
     }
 })
 
