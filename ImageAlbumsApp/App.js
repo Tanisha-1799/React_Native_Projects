@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { LogBox, StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import Feather from '@expo/vector-icons/Feather'
@@ -8,6 +8,8 @@ import { useFonts, Nunito_400Regular as NunitoRegular, Nunito_700Bold as NunitoB
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Navigator from './src/navigation';
 
+
+LogBox.ignoreLogs(['VirtualizedLists']);
 const MyTheme = {
   ...DefaultTheme,
   colors: {
