@@ -12,7 +12,7 @@ const {album}=route.params;
             <SharedAlbumTitleCard album={album} />
             <View style={Styles.avatarContainer}>
             <Avatars avatars={album.avatars} />
-            <Text>{`${album.avatars.length} people`}</Text>
+            <Text style={styles.avatarContainerText}>{`${album.avatars.length} people`}</Text>
 
             </View>
 
@@ -33,6 +33,11 @@ const styles=StyleSheet.create({
         paddingVertical:theme.spacing.xs,
         borderRadius:theme.borderRadius.m,
 
+    },
+    avatarContainerText:{
+        ...theme.textVariants.body3,
+        color:theme.colors.gray,
+        
     }
 })
 
