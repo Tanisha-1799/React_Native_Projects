@@ -34,9 +34,10 @@ const ImageGallery = ({images}) => {
 };
 const styles=StyleSheet.create({
     galleryContainer:{
-
+        
     },
     galleryText:{},
+    galleryImage:{},
 
 })
 
