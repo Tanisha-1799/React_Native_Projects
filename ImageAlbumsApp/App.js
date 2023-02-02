@@ -8,7 +8,14 @@ import { useFonts, Nunito_400Regular as NunitoRegular, Nunito_700Bold as NunitoB
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Navigator from './src/navigation';
 
-
+LogBox.ignoreLogs(['VirtualizedLists']);
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: '#FAFAFA'
+  },
+};
 
 
 // Loads the Feather icons (https://docs.expo.io/guides/icons/)
