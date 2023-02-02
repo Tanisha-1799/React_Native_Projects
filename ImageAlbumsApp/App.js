@@ -9,14 +9,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import Navigator from './src/navigation';
 
 
-LogBox.ignoreLogs(['VirtualizedLists']);
-const MyTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: '#FAFAFA'
-  },
-};
+
 
 // Loads the Feather icons (https://docs.expo.io/guides/icons/)
 function cacheFonts(fonts) {
