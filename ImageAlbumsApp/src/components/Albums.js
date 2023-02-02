@@ -33,7 +33,9 @@ const Albums=({navigation, navigation:{ setOptions } })=>{
     //making function to render the content of bottom sheet
     const renderBottomSheetContent=()=> <BottomSheetContent handleClose={closeBottomSheet}/>
     
-    
+    const openBottomSheet =()=>{
+      sheetRef.current.snapTo(0);
+    }
     const closeBottomSheet =()=>{
       sheetRef.current.snapTo(1);
     }
