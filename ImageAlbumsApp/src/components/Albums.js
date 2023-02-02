@@ -36,6 +36,9 @@ const Albums=({navigation, navigation:{ setOptions } })=>{
     const openBottomSheet =()=>{
       sheetRef.current.snapTo(0);
     }
+    const closeBottomSheet =()=>{
+      sheetRef.current.snapTo(1);
+    }
     
     
 
