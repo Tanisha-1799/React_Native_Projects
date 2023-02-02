@@ -21,7 +21,7 @@ const Albums=({navigation, navigation:{ setOptions } })=>{
     useLayoutEffect(()=>{
       setOptions({
         headerRight:()=>(
-          <TouchableOpacity onPress={()=>console.log("Hello")}>
+          <TouchableOpacity onPress={openBottomSheet}>
           <View style={styles.openSheetButton}>
            <Feather name="plus" size={16} color={theme.colors.white}/>
           </View>
@@ -31,7 +31,15 @@ const Albums=({navigation, navigation:{ setOptions } })=>{
       })
     })
     //making function to render the content of bottom sheet
-    const renderBottomSheetContent=()=> <BottomSheetContent />
+    const renderBottomSheetContent=()=> <BottomSheetContent handleClose={closeBottomSheet}/>
+    
+    const openBottomSheet =()=>{
+      sheetRef.current.snapTo(0);
+    }
+    
+    const closeBottomSheet =()=>{
+      sheetRef.current.snapTo(1);
+    }
 
     return(
         <>
