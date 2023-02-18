@@ -11,7 +11,7 @@ import HelpPage from './HelpPage';
 import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom'
 import Users from './Users';
 import ErrorBound from './ErrorBound';
-import PureComponent from './PureComponent';
+
 
 class App extends React.Component{
   constructor(){
@@ -78,7 +78,7 @@ class App extends React.Component{
    <ErrorBound>
    <Users />
    </ErrorBound>
-   <PureComponent />
+   
      
     </div>
   );
