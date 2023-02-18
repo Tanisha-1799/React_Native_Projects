@@ -13,7 +13,7 @@ class PureComp extends PureComponent{
         return(
             <div>
                 <h1>Pure Component {this.state.data}</h1>
-                <button onClick={()=>{this.setState({data:10})}}>Update State</button>
+                <button onClick={()=>{this.setState({data:20})}}>Update State</button>
             </div>
         )
     }
