@@ -1,2 +1,7 @@
 This is an application that uses facial recognition or biometric to mark the attendance of a particular person
 Later on may be on successful verification the application might greet a person.
+
+Biometric planning to be used:
+Facial Recognition
+Iris
+Finger print
